@@ -35,7 +35,9 @@ export default class Login extends Component {
                         <Form.Control type="password" name="password" onChange={this.handlePasswordChange} value={this.state.password} />
                     </Form.Group>
                     <Button variant="primary" type="submit"> Submit </Button>
+                   
                 </Form>
+                <a href="/signup"> sing up </a>
             </div>
         )
     }

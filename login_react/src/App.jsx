@@ -1,4 +1,5 @@
-import { useState } from 'react'
+
+/*import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 
@@ -31,4 +32,22 @@ function App() {
   )
 }
 
-export default App
+export default App */
+import  {Link, Outlet } from 'react-router-dom'
+import Login from './Login';
+function App(){
+  return (
+    <div>
+      <nav>
+        <Link to="/login"> login  </Link>
+        <Link to="/signup">singup</Link>
+      </nav>
+      
+      <Outlet/>
+    </div>
+        
+    
+      )
+}
+
+export default App;
