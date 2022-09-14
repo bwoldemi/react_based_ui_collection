@@ -24,21 +24,38 @@ export default class Login extends Component {
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
+                <div>
+                    the company logo goes here
+                </div>
 
-                    <Form.Group className="mb-3">
-                        <Form.Label> Username </Form.Label>
-                        <Form.Control type="text" name="username" placeholder="username" onChange={this.handleUsernameChange} value={this.state.username} />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label> password </Form.Label>
-                        <Form.Control type="password" name="password" onChange={this.handlePasswordChange} value={this.state.password} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit"> Submit </Button>
-                   
-                </Form>
-                <a href="/signup"> sing up </a>
+                <div>
+                    <Form onSubmit={this.handleSubmit}>
+
+                        <Form.Group className="mb-3">
+                            <Form.Control type="text" name="username" placeholder="username" onChange={this.handleUsernameChange} value={this.state.username} />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+
+                            <Form.Control type="password" name="password" onChange={this.handlePasswordChange} value={this.state.password} placeholder="password" />
+                        </Form.Group>
+                        <Button variant="primary" type="submit"> Submit </Button>
+
+                    </Form>
+                    <a href="/signup"> sing up </a>
+                </div>
             </div>
         )
     }
 }
+
+function fetchapi(){
+    console.log("featching");
+    fetch("http://localhost:3000/api/v1.0/login", {method:"get", mode:"cors"}).
+    then(d=>{return d.json()})
+    .catch(e=>console.log(e))
+    .then(d=>console.log(d));
+
+}
+fetchapi();
+
+// react hook 
